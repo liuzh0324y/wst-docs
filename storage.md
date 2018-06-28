@@ -22,11 +22,12 @@
 * 合成完毕后上报合成音视频文件
 * ~~通过 nginx 使用回放服务~~
 
-```sequence
-    participant 资源业务服务器 as A
-    participant 业务控制服务器 as B
-    participant 资源存储服务器 as C
-    participant Nginx as D
+```mermaid
+sequenceDiagram
+    participant A as 资源业务服务器
+    participant B as 业务控制服务器
+    participant C as 资源存储服务器
+    participant D as Nginx
     A->>B: login
     B-->>A: ret_login
     C->>B: login
@@ -66,12 +67,13 @@
 * 接收回放指令并解析所需要的文件信息，返回文件 oss url
 
 业务流程时序图
-```sequence
-    participant 资源业务服务器 as A 
-    participant 业务控制服务器 as B
-    participant 现有存储服务器 as C
-    participant 新存储服务器 as D
-    participant Aliyun OSS as E
+```mermaid
+sequenceDiagram
+    participant A as 资源业务服务器 
+    participant B as 业务控制服务器
+    participant C as 现有存储服务器
+    participant D as 新存储服务器
+    participant E as Aliyun OSS
 
     A->>B: login
     B-->>A: ret_login
